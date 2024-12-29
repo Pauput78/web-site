@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Responsive Dessert Shop Website Design</title>
+
+    <!-- Font Awesome CDN --> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    
+    <!-- Custom CSS File -->
+    <link rel="stylesheet" href="styles/style.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: #f7f7f7;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Section Starts -->
+<header class="header">
+    <a href="#" class="logo">
+        <img src="images/logo1.jpeg" alt="Dessert Paradise">
+    </a>
+    <nav class="navbar">
+        <a href="#home" class="nav-link">
+            <i class="fas fa-home"></i>
+            Home
+        </a>
+        <a href="#about" class="nav-link">
+            <i class="fas fa-info-circle"></i>
+            About
+        </a>
+        <a href="#products" class="nav-link">
+            <i class="fas fa-utensils"></i>
+            Menu
+        </a>
+        <a href="#contact" class="nav-link">
+            <i class="fas fa-envelope"></i>
+            Contact
+        </a>
+    </nav>
+    <div class="icons">
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="cart-icon">
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <span class="cart-count">0</span>
+        </div>
+        <a href="#" class="checkout-btn">CHECKOUT</a>
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="shopping-cart">
+        <div class="cart-header">
+            <h3>Keranjang Belanja</h3>
+            <i class="fas fa-times" id="close-cart"></i>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-total">
+            <h3>Total: <span>Rp45.000</span></h3>
+            <button class="btn checkout-btn" id="checkout-btn">Checkout via Email</button>
+        </div>
+    </div>
+</header>
+<!-- Header Section End -->
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="content">
+        <h1>DESSERT TERLEZAT</h1>
+        <h2>DI KOTA</h2>
+        <p>Nikmati Berbagai Macam Dessert Premium Dengan Rasa Yang Tak Terlupakan</p>
+        <div class="cta-buttons">
+            <a href="#about" class="btn btn-secondary">Tentang Kami</a>
+            <a href="#products" class="btn btn-secondary">lihat menu</a>
+        </div>
+    </div>
+    <div class="hero-overlay"></div>
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+    <div class="about-header">
+        <h2 class="section-title">Tentang Kami</h2>
+        <p class="subtitle">Dessert Paradise - Surganya Pencinta Dessert</p>
+    </div>
+    
+    <div class="about-container">
+        <div class="about-image">
+            <img src="images/logo1.jpeg" alt="Dessert Paradise Logo" class="logo-image">
+            <div class="experience-badge">
+                <span class="number">5+</span>
+                <span class="text">Tahun<br>Pengalaman</span>
+            </div>
+        </div>
+        
+        <div class="about-content">
+            <h2>Apa Yang Membuat Dessert Kami Spesial?</h2>
+            <div class="about-text">
+                <p>Kami Menggunakan Bahan-Bahan Premium Berkualitas Tinggi Dan Resep Yang Telah Diwariskan Turun-Temurun Untuk Menciptakan Dessert Yang Sempurna Untuk Anda.</p>
+                <p>Setiap Produk Dibuat Dengan Cinta Dan Perhatian Khusus Untuk Memastikan Kualitas Terbaik.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-cookie-bite"></i>
+                    <h3>Bahan Premium</h3>
+                    <p>Menggunakan bahan berkualitas terbaik</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-heart"></i>
+                    <h3>Dibuat dengan Cinta</h3>
+                    <p>Setiap detail diperhatikan dengan seksama</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-award"></i>
+                    <h3>Kualitas Terjamin</h3>
+                    <p>Standar kualitas tinggi di setiap produk</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-truck"></i>
+                    <h3>Pengiriman Cepat</h3>
+                    <p>Pelayanan pengiriman yang tepat waktu</p>
+                </div>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="#products" class="btn primary-btn">Lihat Produk</a>
+                <a href="Portofolio.html" class="btn secondary-btn">Tentang Saya</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Products Section -->
+<section class="products" id="products">
+    <h1 class="heading">PRODUK UNGGULAN</h1>
+    <div class="box-container">
+        <!-- Produk 1 -->
+        <div class="box">
+            <div class="image">
+                <img src="images/produk/blueberry cake.jpeg" alt="Blueberry Cake">
+            </div>
+            <div class="content">
+                <h3>Blueberry Cake</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="price">Rp45.000 <span>Rp55.000</span></div>
+                <a href="#" class="add-to-cart-btn" data-name="Blueberry Cake" data-price="45000" data-image="images/produk/blueberry cake.jpeg">Tambah ke Keranjang</a>
+            </div>
+        </div>
+
+        <!-- Produk 2 -->
+        <div class="box">
+            <div class="icons">
+            </div>
+            <div class="image">
+                <img src="images/produk/blueberry chess cake.jpeg" alt="Blueberry Chess Cake">
+            </div>
+            <div class="content">
+                <h3>Blueberry Chess Cake</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="price">Rp50.000 <span>Rp60.000</span></div>
+                <a href="#" class="add-to-cart-btn" data-name="Blueberry Chess Cake" data-price="50000" data-image="images/produk/blueberry chess cake.jpeg">Tambah ke Keranjang</a>
+            </div>
+        </div>
+
+        <!-- Produk 3 -->
+        <div class="box">
+            <div class="icons">
+            </div>
+            <div class="image">
+                <img src="images/produk/cake coklat.jpeg" alt="Cake Coklat">
+            </div>
+            <div class="content">
+                <h3>Cake Coklat</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="price">Rp40.000 <span>Rp48.000</span></div>
+                <a href="#" class="add-to-cart-btn" data-name="Cake Coklat" data-price="40000" data-image="images/produk/cake coklat.jpeg">Tambah ke Keranjang</a>
+            </div>
+        </div>
+
+        <!-- Produk 4 -->
+        <div class="box">
+            <div class="icons">
+            </div>
+            <div class="image">
+                <img src="images/produk/ice cream coklat.jpeg" alt="Ice Cream Coklat">
+            </div>
+            <div class="content">
+                <h3>Ice Cream Coklat</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="price">Rp25.000 <span>Rp30.000</span></div>
+                <a href="#" class="add-to-cart-btn" data-name="Ice Cream Coklat" data-price="25000" data-image="images/produk/ice cream coklat.jpeg">Tambah ke Keranjang</a>
+            </div>
+        </div>
+
+        <!-- Produk 5 -->
+        <div class="box">
+            <div class="icons">
+            </div>
+            <div class="image">
+                <img src="images/produk/ice cream pancake.jpeg" alt="Ice Cream Pancake">
+            </div>
+            <div class="content">
+                <h3>Ice Cream Pancake</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="price">Rp35.000 <span>Rp42.000</span></div>
+                <a href="#" class="add-to-cart-btn" data-name="Ice Cream Pancake" data-price="35000" data-image="images/produk/ice cream pancake.jpeg">Tambah ke Keranjang</a>
+            </div>
+        </div>
+
+        <!-- Produk 6 -->
+        <div class="box">
+            <div class="icons">
+
+            </div>
+            <div class="image">
+                <img src="images/produk/macaron pancake.jpeg" alt="Macaron Pancake">
+            </div>
+            <div class="content">
+                <h3>Macaron Pancake</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="price">Rp38.000 <span>Rp45.000</span></div>
+                <a href="#" class="add-to-cart-btn" data-name="Macaron Pancake" data-price="38000" data-image="images/produk/macaron pancake.jpeg">Tambah ke Keranjang</a>
+            </div>
+        </div>
+
+        <!-- Produk 7 -->
+        <div class="box">
+            <div class="icons">
+
+            </div>
+            <div class="image">
+                <img src="images/produk/pancake original.jpeg" alt="Pancake Original">
+            </div>
+            <div class="content">
+                <h3>Pancake Original</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="price">Rp30.000 <span>Rp35.000</span></div>
+                <a href="#" class="add-to-cart-btn" data-name="Pancake Original" data-price="30000" data-image="images/produk/pancake original.jpeg">Tambah ke Keranjang</a>
+            </div>
+        </div>
+
+        <!-- Produk 8 -->
+        <div class="box">
+            <div class="icons">
+            </div>
+            <div class="image">
+                <img src="images/produk/pudding caramel.jpeg" alt="Pudding Caramel">
+            </div>
+            <div class="content">
+                <h3>Pudding Caramel</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="price">Rp28.000 <span>Rp33.000</span></div>
+                <a href="#" class="add-to-cart-btn" data-name="Pudding Caramel" data-price="28000" data-image="images/produk/pudding caramel.jpeg">Tambah ke Keranjang</a>
+            </div>
+        </div>
+
+        <!-- Produk 9 -->
+        <div class="box">
+            <div class="icons">
+            </div>
+            <div class="image">
+                <img src="images/produk/tart blueberry.jpeg" alt="Tart Blueberry">
+            </div>
+            <div class="content">
+                <h3>Tart Blueberry</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="price">Rp42.000 <span>Rp50.000</span></div>
+                <a href="#" class="add-to-cart-btn" data-name="Tart Blueberry" data-price="42000" data-image="images/produk/tart blueberry.jpeg">Tambah ke Keranjang</a>
+            </div>
+        </div>
+
+        <!-- Produk 10 -->
+        <div class="box">
+            <div class="icons">
+            </div>
+            <div class="image">
+                <img src="images/produk/tiramisu.jpeg" alt="Tiramisu">
+            </div>
+            <div class="content">
+                <h3>Tiramisu</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="price">Rp45.000 <span>Rp55.000</span></div>
+                <a href="#" class="add-to-cart-btn" data-name="Tiramisu" data-price="45000" data-image="images/produk/tiramisu.jpeg">Tambah ke Keranjang</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Custom JS File Link -->
+<script src="js/script.js"></script>
+</body>
+</html>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-nav">
+            <a href="#">Beranda</a>
+            <a href="#">About</a>
+            <a href="#">Products</a>
+            <a href="#">Kontak</a>
+        </div>
+        <div class="social-buttons">
+            <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>© 2024. Dibuat Dengan ❤️</p>
+        <p>Hubungi Saya Di: <a href="mailto:Putripauziah852@gmail.com">Putripauziah852@gmail.com</a></p>
+    </div>
+</footer>

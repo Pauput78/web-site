@@ -1,0 +1,1099 @@
+@import url('https://fonts.google.com/share?selection.family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root{
+    --main-color: #b9a8d0;
+    --secondary-color: #9898f8;
+    --bg: #fc5ed283;
+    --text-color: #333;
+    --border: .1rem solid rgba(0, 0, 0, 0.1);
+    --pink: #b9a8d0;
+    --secondary-pink: #b9a8d0;
+    --white: #fff;
+    --light-color: #666;
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: #fff;
+    border-radius: 5rem;
+}
+
+body{
+    margin: 0;
+    padding-bottom: 100px;
+    background-color: #fc5ed283;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    padding-bottom: 100px;
+    margin: 0;
+
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: #beb4cf;
+        padding: 1.5rem 7%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .header .logo img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    
+    .header .logo img:hover {
+        transform: scale(1.05);
+    }
+    
+    .navbar {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+    }
+    
+    .nav-link {
+        font-size: 1.6rem;
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.8rem 1.5rem;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .nav-link i {
+        font-size: 1.8rem;
+    }
+    
+    .nav-link:hover {
+        color: #fff;
+        background: #b9a8d0;
+        transform: translateY(-2px);
+    }
+    
+    .icons {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .icons > div {
+        font-size: 2rem;
+        cursor: pointer;
+        color: #333;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+    
+    .icons > div:hover {
+        color: #b9a8d0;
+        transform: scale(1.1);
+    }
+    
+    .cart-icon {
+        position: relative;
+    }
+    
+    .cart-count {
+        position: absolute;
+        top: -5px;
+        right: -10px;
+        background: var(--pink);
+        color: white;
+        border-radius: 50%;
+        padding: 2px 6px;
+        font-size: 1.2rem;
+    }
+    
+    #search-btn {
+        font-size: 2rem;
+    }
+    
+    #cart-btn {
+        font-size: 2rem;
+    }
+    
+    #menu-btn {
+        display: none;
+        font-size: 2rem;
+    }
+    
+    /* Checkout Button */
+  
+    
+    /* Responsive Design */
+    @media (max-width: 991px) {
+        .header {
+            padding: 1.5rem;
+        }
+        
+        .navbar {
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            padding: 0.6rem 1rem;
+            font-size: 1.4rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .header {
+            padding: 1.5rem;
+        }
+        
+        .navbar {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            flex-direction: column;
+            gap: 1.5rem;
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            transition: 0.3s ease;
+        }
+        
+        .navbar.active {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        
+        #menu-btn {
+            display: block;
+        }
+        
+        .checkout-btn {
+            margin: 1rem 0;
+        }
+    }
+    
+}
+
+@media (max-width: 991px){
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 1.5rem 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px){
+    #menu-btn {
+        display: inline-block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%; right: -100%;
+        background: #b9a8d0;
+        width: 30rem;
+        height: calc(100vh - 9.5rem);
+        transition: .3s ease;
+    }
+
+    .navbar.active {
+        right: 0;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 1.5rem;
+        padding: .5rem;
+        font-size: 2rem;
+    }
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 9%;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/background_menu.jpeg') no-repeat center center/cover;
+    z-index: -2;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 20, 145, 0.167),
+        #9984ff9d
+    );
+    z-index: -1;
+}
+
+.hero .content {
+    max-width: 60rem;
+    color: #fff;
+    animation: fadeInUp 1s ease;
+}
+
+.hero .content h1,
+.hero .content h2 {
+    font-size: 7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+    margin: 0;
+}
+
+.hero .content h2 {
+    margin-bottom: 2rem;
+}
+
+.hero .content p {
+    font-size: 2rem;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hero .cta-buttons {
+    display: flex;
+    gap: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1.5rem 3.5rem;
+    font-size: 1.8rem;
+    border-radius: 5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #fff;
+    color: var(--pink);
+}
+
+.btn-primary:hover {
+    background: #b9a8d0;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 20, 147, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-secondary:hover {
+    background: #fff;
+    color: #b9a8d0;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero {
+        padding: 0 5%;
+    }
+
+    .hero .content h1,
+    .hero .content h2 {
+        font-size: 5rem;
+    }
+
+    .hero .content p {
+        font-size: 1.8rem;
+    }
+
+    .hero .cta-buttons {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -1000px;
+    }
+}
+
+/* Products Section */
+.products {
+    padding: 5rem 9%;
+    background: linear-gradient(to bottom, #fff5f8, #ffe5f1);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 4rem;
+    color: var(--text-color);
+    margin-bottom: 3rem;
+}
+
+.section-title span {
+    color: var(--pink);
+}
+
+.products .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 2.5rem;
+}
+
+.products .box-container .box {
+    position: relative;
+    background: #fff;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.products .box-container .box:hover {
+    transform: translateY(-1rem);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+}
+
+.products .box-container .box .discount {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: var(--pink);
+    color: #fff;
+    padding: 0.7rem 1rem;
+    font-size: 1.5rem;
+    border-radius: 2rem;
+    z-index: 1;
+}
+
+.products .box-container .box .image {
+    position: relative;
+    text-align: center;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.products .box-container .box .image img {
+    height: 25rem;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+}
+
+.products .box-container .box:hover .image img {
+    transform: scale(1.1);
+}
+
+.products .box-container .box .image .icons {
+    position: absolute;
+    bottom: -7rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.products .box-container .box:hover .image .icons {
+    bottom: 2rem;
+}
+
+.products .box-container .box .image .icons a {
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding: 0 1.5rem;
+    font-size: 1.7rem;
+    color: var(--text-color);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 3rem;
+    transition: all 0.3s ease;
+}
+
+.products .box-container .box .image .icons .cart-btn {
+    padding: 0 3rem;
+    color: var(--pink);
+    font-weight: 600;
+}
+
+.products .box-container .box .image .icons a:hover {
+    background: var(--pink);
+    color: #fff;
+}
+
+.products .box-container .box .content {
+    padding: 2rem;
+    text-align: center;
+}
+
+.products .box-container .box .content h3 {
+    font-size: 2.2rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.products .box-container .box .content .stars {
+    margin-bottom: 1rem;
+}
+
+.products .box-container .box .content .stars i {
+    font-size: 1.7rem;
+    color: gold;
+}
+
+.products .box-container .box .content .price {
+    font-size: 2.2rem;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.products .box-container .box .content .price span {
+    font-size: 1.7rem;
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 1rem;
+    font-weight: normal;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .products {
+        padding: 3rem 5%;
+    }
+    
+    .products .box-container {
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    }
+}
+
+/* About Section */
+.about {
+    padding: 8rem 9%;
+    background: linear-gradient(135deg, #fff5f8 0%, #ffe5f1 100%);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3.5rem;
+    color: var(--pink);
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15rem;
+    height: 0.3rem;
+    background: var(--secondary-pink);
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+    margin-top: 5rem;
+}
+
+.about-image {
+    flex: 1;
+    position: relative;
+    padding: 2rem;
+}
+
+.logo-image {
+    width: 100%;
+    max-width: 45rem;
+    border-radius: 50%;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
+}
+
+.experience-badge {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+    background: var(--pink);
+    color: white;
+    padding: 2rem;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 0 0.5rem 1.5rem rgba(255,20,147,0.3);
+}
+
+.experience-badge .number {
+    font-size: 3rem;
+    font-weight: bold;
+    display: block;
+}
+
+.experience-badge .text {
+    font-size: 1.4rem;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-content h2 {
+    font-size: 3.5rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+.about-text p {
+    font-size: 1.6rem;
+    color: var(--light-color);
+    line-height: 1.8;
+}
+
+/* Utility Classes */
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    color: var(--white);
+    background: var(--pink);
+    border-radius: 5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--secondary-pink);
+    transform: scale(1.05);
+}
+
+/* Product Card Styling */
+.product-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--pink);
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 25px;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.product-image {
+    position: relative;
+    padding-top: 100%;
+    overflow: hidden;
+}
+
+.product-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.1);
+}
+
+.product-actions {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    display: flex;
+    gap: 10px;
+    transition: bottom 0.3s ease;
+}
+
+.product-card:hover .product-actions {
+    bottom: 0;
+}
+
+.like-btn, .cart-btn {
+    border: none;
+    background: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.like-btn {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.like-btn i {
+    color: var(--pink);
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.like-btn.active {
+    background: var(--pink);
+}
+
+.like-btn.active i {
+    color: #fff;
+}
+
+.cart-btn {
+    flex: 1;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 20px;
+    color: var(--pink);
+    font-weight: 600;
+}
+
+.cart-btn:hover, .like-btn:hover {
+    background: var(--pink);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.cart-btn:hover i, .like-btn:hover i {
+    color: #fff;
+}
+
+/* Notification Styling */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: -300px;
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.notification.show {
+    right: 20px;
+}
+
+.notification.success {
+    border-left: 4px solid #4CAF50;
+}
+
+.notification.info {
+    border-left: 4px solid #2196F3;
+}
+
+.notification i {
+    font-size: 20px;
+}
+
+.notification.success i {
+    color: #4CAF50;
+}
+
+.notification.info i {
+    color: #2196F3;
+}
+
+/* Cart Styling */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+.cart-overlay.active {
+    right: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cart-btn span {
+        display: none;
+    }
+    
+    .cart-btn {
+        width: 45px;
+        padding: 0;
+    }
+    
+    .notification {
+        width: 90%;
+        right: -100%;
+    }
+    
+    .notification.show {
+        right: 5%;
+    }
+}
+
+/* Gaya untuk keranjang */
+.shopping-cart {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Mulai di luar layar */
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease; /* Animasi saat membuka/tutup */
+    z-index: 1000;
+}
+
+.shopping-cart.active {
+    right: 0; /* Tampilkan keranjang */
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-header h3 {
+    margin: 0;
+}
+
+.cart-header .fas.fa-times {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.cart-items {
+    padding: 10px;
+    overflow-y: auto; /* Scroll jika terlalu banyak item */
+    max-height: 70vh; /* Batasi tinggi keranjang */
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-item-title {
+    font-weight: bold;
+}
+
+.cart-item-price {
+    color: #333;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-btn {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    background: #f0f0f0;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.remove-item {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #e74c3c;
+}
+
+.cart-total {
+    padding: 20px;
+    background: #f8f8f8;
+    border-top: 1px solid #ddd;
+    text-align: right;
+}
+
+/* Gaya untuk ikon di dalam box produk */
+.box .icons {
+    display: flex;
+    justify-content: space-between; /* Menyebar ikon */
+    margin-top: 10px; /* Jarak antara harga dan ikon */
+}
+
+/* Gaya untuk tombol tambah ke keranjang */
+.add-to-cart-btn {
+    display: block; /* Menjadikan tombol sebagai blok */
+    background: rgba(255, 20, 147, 0.8); /* Warna latar belakang */
+    color: white; /* Warna teks */
+    border-radius: 5px; /* Bentuk sudut */
+    padding: 12px 20px; /* Padding untuk tombol */
+    text-align: center; /* Teks di tengah */
+    margin-top: 10px; /* Jarak atas dari elemen sebelumnya */
+    transition: background 0.3s ease; /* Transisi saat hover */
+    font-size: 1rem; /* Ukuran font */
+    width: 100%; /* Membuat tombol lebar penuh */
+}
+
+.add-to-cart-btn:hover {
+    background: rgba(255, 20, 147, 1); /* Warna saat hover */
+}
+
+/* Gaya untuk ikon dalam tombol */
+.add-to-cart-btn i {
+    font-size: 1.5rem; /* Ukuran ikon */
+}
+
+@media (max-width: 768px) {
+    .box .icons {
+        top: 5px; /* Atur posisi untuk layar kecil */
+        left: 5px; /* Atur posisi untuk layar kecil */
+    }
+}
+
+.heading {
+    text-align: center; /* Menyelaraskan teks ke tengah */
+    font-size: 3rem; /* Ukuran font yang lebih besar */
+    font-weight: bold; /* Menebalkan teks */
+    color: #333; /* Warna teks */
+    margin-bottom: 20px; /* Jarak bawah */
+    text-transform: uppercase; /* Mengubah teks menjadi huruf kapital */
+    letter-spacing: 1px; /* Jarak antar huruf */
+    position: relative; /* Untuk efek tambahan */
+}
+
+/* Tambahkan garis bawah */
+.heading::after {
+    content: '';
+    display: block;
+    width: 50%; /* Lebar garis */
+    height: 4px; /* Tinggi garis */
+    background: var(--pink); /* Warna garis */
+    margin: 10px auto; /* Pusatkan garis */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #beb4cf; /* Warna latar belakang footer */
+    color: white; /* Warna teks di footer */
+    padding: 20px 0; /* Menambahkan padding untuk footer */
+    text-align: center; /* Menyelaraskan teks di tengah */
+}
+
+.footer-content {
+    max-width: 1200px; /* Lebar maksimum */
+    margin: 0 auto; /* Pusatkan konten */
+    padding: 0 20px; /* Padding samping */
+}
+
+.footer-nav {
+    margin-bottom: 15px;
+    display: flex; /* Use flexbox for navigation */
+    justify-content: center; /* Center navigation items */
+}
+
+.footer-nav a {
+    color: white; /* Mengubah warna tautan di footer */
+    margin: 0 15px; /* Jarak antar tautan */
+    text-decoration: none; /* Menghilangkan garis bawah */
+}
+
+.footer-nav a:hover {
+    color: #b286eb; /* Ubah warna teks saat di-hover */
+    background: white; /* Ubah warna latar belakang saat di-hover */
+    padding: 5px; /* Menambahkan padding saat di-hover */
+    border-radius: 5px; /* Membuat sudut membulat saat di-hover */
+}
+
+.social-buttons {
+    margin: 15px 0; /* Jarak atas dan bawah */
+}
+
+.social-btn {
+    display: inline-flex; /* Menjadikan tombol sebagai inline-flex */
+    align-items: center; /* Menyelaraskan ikon ke tengah */
+    justify-content: center; /* Menyelaraskan ikon ke tengah */
+    width: 40px; /* Lebar tombol */
+    height: 40px; /* Tinggi tombol */
+    border-radius: 50%; /* Bentuk bulat */
+    background: #beb4cf; /* Warna latar belakang tombol */
+    color: #a000fc; /* Warna ikon */
+    margin: 0 10px; /* Jarak antar tombol */
+    transition: background 0.3s ease, color 0.3s ease; /* Transisi saat hover */
+}
+
+.social-btn:hover {
+    background: #f7f4fa; /* Ubah warna latar belakang saat di-hover */
+    color: #752dd4; /* Ubah warna ikon saat di-hover */
+    transform: scale(1.1); /* Tambahkan efek zoom saat di-hover */
+}
+
+footer p {
+    color: white;
+    margin: 10px 0;
+}
+
+footer a {
+    color: #00f;
+    text-decoration: underline;
+}
+
+.social-buttons a {
+    color: rgb(114, 58, 235);
+    margin: 0 10px;
+}
+
+.social-buttons a:hover {
+    background: #8730fa;
+    color: #ece7f3;
+    border-radius: 50%;
+}
+
+.checkout-btn {
+    display: block; /* Pastikan tombol ditampilkan sebagai blok */
+    background-color: #b9a8d0; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    padding: 10px 20px; /* Padding tombol */
+    border: none; /* Menghilangkan border */
+    border-radius: 5px; /* Sudut membulat */
+    cursor: pointer; /* Menunjukkan bahwa ini adalah tombol */
+    transition: background 0.3s ease; /* Transisi saat hover */
+    margin-top: 10px; /* Jarak atas */
+}
+
+.checkout-btn:hover {
+    background-color: #a68cb0; /* Warna saat hover */
+}

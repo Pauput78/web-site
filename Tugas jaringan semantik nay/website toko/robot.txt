@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: https://pauput78.github.io/dessert_parade_lovin/sitemap.xml

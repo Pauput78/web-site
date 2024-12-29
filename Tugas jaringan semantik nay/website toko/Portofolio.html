@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Putri Pauziah</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            line-height: 1.6;
+            color: #2c3e50;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .main-content {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .left-column, .right-column {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        .profile-card, .education-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card:hover, .education-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .profile-header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-body {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 10px;
+        }
+
+        .label {
+            color: #6c757d;
+            min-width: 120px;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #3498db;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 70px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 44px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #3498db;
+            border: 3px solid white;
+        }
+
+        .timeline-content {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateX(10px);
+            background: white;
+        }
+
+        .education-icon {
+            width: 40px;
+            height: 40px;
+            background: #3498db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .education-icon i {
+            color: white;
+        }
+
+        .year {
+            color: #6c757d;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+
+            .left-column, .right-column {
+                max-width: 100%;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                padding-left: 50px;
+            }
+
+            .timeline-dot {
+                left: 24px;
+            }
+        }
+
+        /* Tambahkan CSS untuk footer */
+        footer {
+            width: 100%;
+            padding: 20px 0;
+            background: white;
+            margin-top: 30px;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .footer-nav {
+            margin-bottom: 20px;
+        }
+
+        .footer-nav a {
+            color: #2c3e50;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: #3498db;
+        }
+
+        .social-buttons {
+            margin: 20px 0;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f8f9fa;
+            margin: 0 10px;
+            color: #2c3e50;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            background: #3498db;
+            color: white;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            color: #6c757d;
+        }
+
+        .email-link {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .email-link:hover {
+            text-decoration: underline;
+        }
+
+        .heart {
+            color: #e74c3c;
+        }
+
+        .card {
+            margin: 15px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: #fff;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-img-top {
+            object-fit: cover;
+            height: 200px;
+            border-bottom: 5px solid #007bff;
+        }
+
+        .profile-photo {
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Warna saat hover */
+            transform: scale(1.05); /* Efek zoom saat hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-content">
+            <!-- Kolom kiri -->
+            <div class="left-column">
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <img src="pas foto.jpg" alt="Foto Profil" class="profile-img">
+                        <h1>Putri Pauziah</h1>
+                        <p class="tagline">Web Developer | Student collage</p>
+                    </div>
+                    
+                    <div class="profile-body">
+                        <div class="section">
+                            <h2><i class="fas fa-user"></i> Tentang Saya</h2>
+                            <p>Saya adalah mahasiswa semester 3 Ilmu Komputer di Universitas Yatsi Madani dengan minat besar pada pengembangan perangkat lunak dan teknologi informasi.</p>
+                        </div>
+
+                        <div class="section">
+                            <h2><i class="fas fa-info-circle"></i> Informasi Personal</h2>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span class="label">NIM:</span>
+                                    <span>23050583</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Program Studi:</span>
+                                    <span>Ilmu Komputer</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Semester:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Email:</span>
+                                    <span>putripauziah852@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kolom kanan -->
+            <div class="right-column">
+                <div class="education-card">
+                    <h2><i class="fas fa-graduation-cap"></i> Riwayat Pendidikan</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="education-icon">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <h3>Universitas Yatsi Madani</h3>
+                                <p class="program">Program Studi Ilmu Komputer – Semester 3</p>
+                                <p class="year"><i class="fas fa-calendar-alt"></i> 2023 - Sekarang</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="education-icon">
+                                    <i class="fas fa-school"></i>
+                                </div>
+                                <h3>SMKI Baidhaul Ahkam</h3>
+                                <p class="program">Jurusan Akuntansi</p>
+                                <p class="year"><i class="fas fa-calendar-alt"></i> 2020 - 2023</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="education-icon">
+                                    <i class="fas fa-school"></i>
+                                </div>
+                                <h3>SMPN 12 Kota Tangerang</h3>
+                                <p class="year"><i class="fas fa-calendar-alt"></i> 2017 - 2020</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+        
+
+<section class="portfolio-section" id="portfolio">
+    <div class="container">
+        <h2 class="section-title text-center">Portofolio</h2>
+        <p class="text-center text-muted">Beberapa karya terbaik saya</p>
+
+        <div class="swiper portfolio-swiper">
+            <div class="swiper-wrapper">
+                <!-- Proyek Database Perhotelan -->
+                <div class="swiper-slide">
+                    <div class="card">
+                        <img src="databases.jpeg" alt="Database Perhotelan" class="card-img-top rounded" style="width: 100%; height: auto;">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-hotel"></i> Database Perhotelan</h5>
+                            <p class="card-text">Membangun sistem database untuk manajemen data perhotelan, termasuk pemesanan dan pengelolaan tamu.</p>
+                            <p class="card-text">
+                                <strong>Fitur Utama:</strong>
+                                <ul>
+                                    <li>Manajemen data tamu yang efisien</li>   
+                                    <li>Antarmuka pengguna yang intuitif</li>
+                                    <li>Integrasi sistem pemesanan</li>
+                                </ul>
+                            </p>
+                            <a href="#" class="btn btn-primary">Detail Portofolio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyek Aplikasi Sederhana -->
+                <div class="swiper-slide">
+                    <div class="card">
+                        <img src="potofolio/apk1.jpeg" alt="Aplikasi Sederhana" class="card-img-top rounded" style="width: 100%; height: auto;">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-mobile-alt"></i> Aplikasi Sederhana</h5>
+                            <p class="card-text">Membuat aplikasi sederhana yang membantu pengguna dalam menyelesaikan tugas sehari-hari.</p>
+                            <a href="#" class="btn btn-primary">Detail Portofolio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyek Website -->
+                <div class="swiper-slide">
+                    <div class="card">
+                        <img src="potofolio/website.png" alt="Website" class="card-img-top rounded" style="width: 100%; height: auto;">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-laptop-code"></i> Website</h5>
+                            <p class="card-text">Membangun website interaktif dengan desain responsif dan fitur-fitur menarik.</p>
+                            <a href="#" class="btn btn-primary">Detail Portofolio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Navigation buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+</section>
+
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-nav">
+            <a href="#home">Beranda</a>
+            <a href="#about">Tentang</a>
+            <a href="#projects">Proyek</a>
+            <a href="#contact">Kontak</a>
+        </div>
+        
+        <div class="social-buttons">
+            <a href="https://facebook.com/username" class="social-btn facebook" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/putri.pzh?igsh=YzdpZWJvcHVkcTZ0" class="social-btn instagram" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://github.com/username" class="social-btn github" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/username" class="social-btn linkedin" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2024 Portfolio Saya. Dibuat dengan <span class="heart">❤️</span></p>
+            <p>Hubungi saya di: <a href="mailto:putripauziah852@gmail.com" class="email-link">putripauziah852@gmail.com</a></p>
+        </div>
+    </div>
+</footer>
